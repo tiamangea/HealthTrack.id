@@ -108,7 +108,7 @@ const getAIRecommendation = (worker) => {
 
 const MobileFrame = ({ children, appMessage }) => (
   <div className="min-h-screen bg-slate-200 flex justify-center items-center py-8 font-sans">
-    <div className="w-[400px] h-[820px] bg-white rounded-[3rem] shadow-2xl overflow-hidden border-[12px] border-slate-900 relative flex flex-col">
+    <div className="w-full max-w-[400px] h-[820px] bg-white rounded-[3rem] shadow-2xl overflow-hidden border-[12px] border-slate-900 relative flex flex-col">
       <div className="absolute top-0 inset-x-0 h-6 z-50 flex justify-center">
           <div className="w-32 h-6 bg-slate-900 rounded-b-xl"></div>
       </div>
@@ -165,7 +165,7 @@ const HomeTabAdmin = ({ avgWWI, totalWorkers, activeAlertsCount, activeAlertsLis
               <p className="text-xs text-slate-400">Total Pekerja</p>
               <p className="font-bold text-lg">{totalWorkers} <span className="text-xs font-normal">Org</span></p>
             </div>
-            <div className="pl-4 border-l border-slate-700 active:opacity-70 transition-opacity" onClick={() => setIsAlertsListOpen(true)}>
+            <div className="pl-4 border-l border-slate-700 active:opacity-70 transition-opacity cursor-pointer" onClick={() => setIsAlertsListOpen(true)}>
               <p className="text-xs text-slate-400">Peringatan Aktif</p>
               <p className={`font-bold text-lg flex items-center gap-1 ${activeAlertsCount > 0 ? 'text-orange-400' : 'text-slate-200'}`}>
                 {activeAlertsCount} {activeAlertsCount > 0 && <AlertTriangle size={14}/>}
@@ -964,9 +964,18 @@ export default function App() {
       <MobileFrame appMessage={appMessage}>
         <div className="flex-1 bg-slate-50 flex flex-col p-6 overflow-y-auto pt-12">
           <div className="flex flex-col items-center justify-center py-8">
-             <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4 shadow-sm">
-                <ShieldAlert className="text-blue-600" size={32} />
+             
+             {/* === BAGIAN LOGO === */}
+             {/* Ganti tulisan "URL_FOTO_ANDA_DISINI" dengan link gambar atau path foto Anda */}
+             <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-slate-200 overflow-hidden">
+                <img 
+                  src="https://placehold.co/150x150/1e3a8a/white?text=WG" 
+                  alt="Logo WellGuard" 
+                  className="w-full h-full object-cover" 
+                />
              </div>
+             {/* ==================== */}
+
              <h1 className="text-2xl font-black text-slate-800 tracking-wider">WellGuard</h1>
              <p className="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Mobile Command Center</p>
           </div>
