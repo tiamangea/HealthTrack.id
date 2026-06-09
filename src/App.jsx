@@ -969,7 +969,7 @@ export default function App() {
              {/* Ganti tulisan "URL_FOTO_ANDA_DISINI" dengan link gambar atau path foto Anda */}
              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-slate-200 overflow-hidden">
                 <img 
-                  src="https://placehold.co/150x150/1e3a8a/white?text=WG" 
+                  src="logo.png" 
                   alt="Logo WellGuard" 
                   className="w-full h-full object-cover" 
                 />
